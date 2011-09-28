@@ -28,10 +28,13 @@
 			-I think my math works. Will have to run by somebody.
 			-Also not sure about the colors I used here. Good guess.
 		*And to wrap up, 0 compile warnings with -Wall.
+	v0.2.3 - 27sep11
+		-Adjust coloring for IOwait calculation
+		-Fixed IOwait calculatoin bug, was off at delay>1.
 */
 
-#define VERSION "0.2.2"
-#define VDATE "26sep11"
+#define VERSION "0.2.3"
+#define VDATE "27sep11"
 #define CODENAME "Horror Machine"
 
 #include <stdio.h>
@@ -133,7 +136,7 @@ int main(int argc, char *argv[])
 
 	(void)signal(SIGINT, bye); //tc shuts up cw
 	opterr=0;
-    setvbuf(stdout, NULL, _IOLBF,0);
+	setvbuf(stdout, NULL, _IOLBF,0);
 
 	while((opt=getopt(argc, argv, "+whvD::d:Cc:"))!=-1)
 		switch(opt)
@@ -231,10 +234,10 @@ int main(int argc, char *argv[])
 		// Show IO stuffs
 		if(getIO)
 		{
-			tmp=(((float)getIOwait(1)*100*pause)/jiffy)/corecount;
+			tmp=((((float)getIOwait(1)*100*pause)/jiffy)/corecount)/pause;
 			if(tmp>=25) strcpy(color, "\E[0;30;41m");
-			else if(tmp>=15) strcpy(color, "\E[1;31m");
-			else if(tmp>10) strcpy(color, "\E[1;33m");
+			else if(tmp>=20) strcpy(color, "\E[1;31m");
+			else if(tmp>15) strcpy(color, "\E[1;33m");
 			else strcpy(color, "\E[0m");
 			printf(" %s %s%.2f\e[0;m", delimiter, color, tmp);
 		}
@@ -245,3 +248,4 @@ int main(int argc, char *argv[])
 	printf("Boom.\n");
 	return 0;
 }
+
