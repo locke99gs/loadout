@@ -1,0 +1,37 @@
+Loadout (in C!), by Dusten Barker
+---------------------------------
+Fuck with this code before I license it
+and I'll hit you in your filfthy face.
+
+v0.2 - 25sep11 - "Clear Water"
+	-Previous versions were bash scripts
+	-Cause v0.1 stalls at loads ~10*corecount
+	-Cause bash doesn't do fractional maths with built-ins or core-utils.
+	-Cause this kickassery spawns one process vs a bajillion.
+	-Cause I'm awesome, bored, and this is the sex.
+	*5k for command line argument and sanity testing. Fuck.
+
+v0.2.1 - 25sep11 - "More Beef"
+	+Added signal handling
+	*Signal handling increases binary size ~200 bytes.
+v0.2.2 - 26sep11 - "Horror Machine"
+	+Can now redirect output on command line
+	-Put errors on stderr
+	+Can now set delay
+	+Can now display date, with configurable date output.
+	*Surpasses feature parity with v0.1 bash script
+	*POSIX compliant, cause I'm amazing
+	+Add counter for up, down, and show or not.
+	+Add rudimentary IOwait colorized output
+		-I think my math works. Will have to run by somebody.
+		-Also not sure about the colors I used here. Good guess.
+	*And to wrap up, 0 compile warnings with -Wall.
+v0.2.3 - 27sep11
+	-Adjust coloring for IOwait calculation
+	-Fixed IOwait calculatoin bug, was off at delay>1.
+v0.3 - 17oct11
+	-Add rudimentary memory stuffs
+	-Get VZ beans if on VZ
+	-Modular rewrite
+	-And Bacon.
+
