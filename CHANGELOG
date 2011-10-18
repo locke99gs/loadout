@@ -29,9 +29,10 @@ v0.2.2 - 26sep11 - "Horror Machine"
 v0.2.3 - 27sep11
 	-Adjust coloring for IOwait calculation
 	-Fixed IOwait calculatoin bug, was off at delay>1.
-v0.3 - 17oct11
+v0.3 - 17oct11 - "Candied Bacon"
 	-Add rudimentary memory stuffs
 	-Get VZ beans if on VZ
 	-Modular rewrite
+	-Takes fractional delay now
 	-And Bacon.
 
